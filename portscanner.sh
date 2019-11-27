@@ -1,10 +1,10 @@
 #!/bin/bash
 
-echo "installing inportant apps"
+echo "Installing important apps"
 sleep 2
-sudo apt-get install snapd
-sleep 1
-clear
+sudo apt-get update
+sudo apt-get install snapd vlc tmux neofetch git zsh
+
 sleep 2
 echo "installing chromium.."
 sudo snap install chromium
@@ -14,4 +14,3 @@ clear
 echo "installing tor-browser.."
 sleep 2
 sudo snap install tor
-
