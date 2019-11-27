@@ -1,11 +1,11 @@
 #!/bin/bash
-RED='\033[0;31m'
-BLUE='\033[0;94m'
-GREEN='\033[0;32m'
-tPutRed=$(tput setaf 1)
-tPutGreen=$(tput setaf 2)
-tPutYellow=$(tput setaf 3)
-tPutBlue=$(tput setaf 4)
+RED=$(tput setaf 196)
+BLUE=$(tput setaf 141)
+GREEN=$(tput setaf 40)
+tPutRed=$(tput setaf 196)
+tPutGreen=$(tput setaf 40)
+tPutYellow=$(tput setaf 226)
+tPutBlue=$(tput setaf 141)
 tPutNoColor=$(tput setaf 9)
 NoColor='\033[0m'
 
@@ -42,6 +42,8 @@ clear
 echo -e "${BLUE}Installing ${tPutYellow}ohMyZsh${BLUE}...${NoColor}"
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sleep 2
+clear
+clear
 clear
 
 echo -e "${GREEN}Done!"
