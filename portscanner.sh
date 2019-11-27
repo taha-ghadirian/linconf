@@ -15,13 +15,13 @@ sudo apt-get
 echo -e "${NoColor}"
 clear
 
-echo -e "${RED}Installing important apps ${NoColor}"
+echo -e "${BLUE}Installing important apps... ${NoColor}"
 sleep 3
-sudo apt-get install snapd vlc tmux neofetch git zsh
+sudo apt-get install snapd vlc tmux neofetch git zsh | grep "000000"
 sleep 2
 clear
 
-echo -e "${RED}installing chromium...${NoColor}"
+echo -e "${BLUE}installing ${RED}chromium${BLUE}...${NoColor}"
 sudo snap install chromium
 sleep 2
 clear
@@ -45,5 +45,5 @@ sleep 2
 clear
 
 echo -e "${GREEN}Done!"
-sleep 10
-exit
+sleep 5
+neofetch
