@@ -46,6 +46,31 @@ clear
 clear
 clear
 
+echo -e "installing telegram.."
+sudo snap install telegram-desktop
+sleep 2
+clear
+
+text="Do you need to install"
+read -p "$text" yn
+echo -e "${NoColor}"
+if [ $yn == "y" ] || [ $yn == "Y" ] || [ $yn == "yes" ] || [ $yn == "Yes" ]
+then
+echo -e "Installing porgram apps.."
+sleep 3
+
+echo -e "installing node js.."
+
+
+sudo apt install nodejs npm
+sleep 5
+clear
+
+else
+echo -e "installing prg apps aborted"
+fi
+
+
 echo -e "${GREEN}Done!"
 sleep 5
 neofetch
