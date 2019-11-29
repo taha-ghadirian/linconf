@@ -3,6 +3,9 @@ RED=$(tput setaf 196)
 BLUE=$(tput setaf 141)
 GREEN=$(tput setaf 40)
 YELLOW=$(tput setaf 226)
+phpStormColor=$(tput setaf 163)
+webStormColor1=$(tput setaf 12)
+webStormColor2=$(tput setaf 208)
 NoColor=$(tput setaf 300)
 
 #Changing Sudo Command To Blue
@@ -55,45 +58,42 @@ then
 
 echo -e "${BLUE}Installing ${YELLOW}porgramming ${BLUE}apps...${NoColor}"
 sleep 3
-
-name="do you want to install software for web programming: "
-read -p "$name" yn
+echo -e "${BLUE}installing ${GREEN}NodeJs${BLUE}...${NoColor}"
+sleep 3
+sudo apt install nodejs npm
+clear
+text="${BLUE}do you want to install software for ${RED}web ${YELLOW}programming? ${RED}([${YELLOW}Y${RED}],n) ${BLUE}:"
+read -p "$text ${YELLOW}" yn
 echo -e "${NoColor}"
-if [ $yn == "y"] || [ $yn == "yes" ] || [ $yn == "Y" ] || [ $yn == "Yes" ]
+if [ $yn == "y" ] || [ $yn == "yes" ] || [ $yn == "Y" ] || [ $yn == "Yes" ]
 then
 
 clear
 sleep 3
-echo -e "Installing porgram for web.."
+echo -e "${BLUE}Installing porgram for ${RED}Web ${YELLOW}Devs${BLUE}...${NoColor}"
 sleep 2
-clear
-echo -e "${BLUE}installing ${GREEN}NodeJs${BLUE}...${NoColor}"
-sleep 2
-sudo apt install nodejs npm
 clear
 
-echo -e "Installing phpstorm.."
+
+echo -e "${BLUE}Installing ${phpStormColor}phpstorm${BLUE}...${NoColor}"
 sleep 2
 sudo snap install phpstorm --classic
 clear
 
-echo -e "Installing webstorm.."
+echo -e "${BLUE}Installing ${webStormColor1}w${webStormColor2}e${webStormColor1}b${webStormColor2}s${webStormColor1}t${webStormColor2}o${webStormColor1}r${webStormColor2}m${BLUE}...${NoColor}"
 sudo snap install webstorm --classic
-
 clear
 sleep 2
 
-echo -e "Install the software for web programming finish.."
+echo -e "${BLUE}Install the software for ${RED}web ${YELLOW}programming ${BLUE}finished...${NoColor}"
 sleep 2
-
 else
-echo -e "Insalling prg for web aborted"
-fi
-
-else
-
-echo -e "${RED}installing programming apps aborted!${NoColor}"
-fi
+echo -e "${BLUE}Installing ${RED}web ${YELLOW}Programming ${BLUE}softwares ${RED}Aborted${BLUE}!${NoColor}"
+fi #End Of WebPrg install
+echo -e "${BLUE} Installing ${YELLOW}Programming ${BLUE}Apps Finished!"
+else #if first yn == no
+echo -e "${BLUE}installing ${YELLOW}programming ${BLUE}apps ${RED}aborted${BLUE}!${NoColor}"
+fi #end Of prgInstall
 
 
 echo -e "${GREEN}Done!${NoColor}"
