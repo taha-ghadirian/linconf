@@ -51,22 +51,51 @@ sudo snap install telegram-desktop
 sleep 2
 clear
 
-text="Do you need to install"
+text="Do you need to install programing software: "
 read -p "$text" yn
 echo -e "${NoColor}"
 if [ $yn == "y" ] || [ $yn == "Y" ] || [ $yn == "yes" ] || [ $yn == "Yes" ]
+
 then
+
 echo -e "Installing porgram apps.."
 sleep 3
 
+name="do you want to install software for web programming: "
+read -p "$name" yn
+echo -e "${NoColor}"
+if [ $yn == "y"] || [$yn == "yes"] || [ $yn == "Y"] || [ $yn == "Yes"]
+then
+
+clear
+sleep 3
+echo -e "Installing porgram for web.."
+sleep 2
+clear
 echo -e "installing node js.."
-
-
-sudo apt install nodejs npm
-sleep 5
+sleep 2
+apt install nodejs npm
 clear
 
+echo -e "Installing phpstorm.."
+sleep 2
+sudo snap install phpstorm --classic
+clear
+
+echo -e "Installing webstorm.."
+sudo snap install webstorm --classic
+clear
+sleep 2
+
+echo -e "Install the software for web programming finish.."
+sleep 2
+
 else
+echo -e "Insalling prg for web aborted"
+fi
+
+else
+
 echo -e "installing prg apps aborted"
 fi
 
