@@ -2,12 +2,8 @@
 RED=$(tput setaf 196)
 BLUE=$(tput setaf 141)
 GREEN=$(tput setaf 40)
-tPutRed=$(tput setaf 196)
-tPutGreen=$(tput setaf 40)
-tPutYellow=$(tput setaf 226)
-tPutBlue=$(tput setaf 141)
-tPutNoColor=$(tput setaf 9)
-NoColor='\033[0m'
+YELLOW=$(tput setaf 226)
+NoColor=$(tput setaf 300)
 
 #Changing Sudo Command To Blue
 echo -e "${BLUE}"
@@ -26,8 +22,8 @@ sudo snap install chromium
 sleep 2
 clear
 
-text="${tPutBlue}Do you need to install ${tPutGreen}TorBrowser${tPutBlue}? ${tPutRed}([${tPutYellow}Y${tPutRed}],n) ${tPutBlue}:" 
-read -p "$text ${tPutYellow}" yn
+text="${BLUE}Do you need to install ${GREEN}TorBrowser${BLUE}? ${RED}([${YELLOW}Y${RED}],n) ${BLUE}:" 
+read -p "$text ${YELLOW}" yn
 echo -e "${NoColor}"
 if [ $yn == "y" ] || [ $yn == "Y" ] || [ $yn == "yes" ] || [ $yn == "Yes" ]
 then
@@ -39,32 +35,31 @@ fi
 sleep 2
 clear
 
-echo -e "${BLUE}Installing ${tPutYellow}ohMyZsh${BLUE}...${NoColor}"
+echo -e "${BLUE}Installing ${YELLOW}ohMyZsh${BLUE}...${NoColor}"
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sleep 2
 clear
 clear
 clear
 
-echo -e "installing telegram.."
+echo -e "${BLUE}installing ${RED}telegram${BLUE}...${NoColor}"
 sudo snap install telegram-desktop
 sleep 2
 clear
 
-text="Do you need to install programing software: "
-read -p "$text" yn
+text="${BLUE}Do you need to install ${YELLOW}Programming${BLUE} softwares? ${RED}([${YELLOW}Y${RED}],n) ${BLUE}:"
+read -p "$text ${YELLOW}" yn
 echo -e "${NoColor}"
 if [ $yn == "y" ] || [ $yn == "Y" ] || [ $yn == "yes" ] || [ $yn == "Yes" ]
-
 then
 
-echo -e "Installing porgram apps.."
+echo -e "${BLUE}Installing ${YELLOW}porgramming ${BLUE}apps...${NoColor}"
 sleep 3
 
 name="do you want to install software for web programming: "
 read -p "$name" yn
 echo -e "${NoColor}"
-if [ $yn == "y"] || [$yn == "yes"] || [ $yn == "Y"] || [ $yn == "Yes"]
+if [ $yn == "y"] || [ $yn == "yes" ] || [ $yn == "Y" ] || [ $yn == "Yes" ]
 then
 
 clear
@@ -72,9 +67,9 @@ sleep 3
 echo -e "Installing porgram for web.."
 sleep 2
 clear
-echo -e "installing node js.."
+echo -e "${BLUE}installing ${GREEN}NodeJs${BLUE}...${NoColor}"
 sleep 2
-apt install nodejs npm
+sudo apt install nodejs npm
 clear
 
 echo -e "Installing phpstorm.."
@@ -84,6 +79,7 @@ clear
 
 echo -e "Installing webstorm.."
 sudo snap install webstorm --classic
+
 clear
 sleep 2
 
@@ -96,10 +92,10 @@ fi
 
 else
 
-echo -e "installing prg apps aborted"
+echo -e "${RED}installing programming apps aborted!${NoColor}"
 fi
 
 
-echo -e "${GREEN}Done!"
+echo -e "${GREEN}Done!${NoColor}"
 sleep 5
 neofetch
