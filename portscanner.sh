@@ -16,7 +16,7 @@ clear
 
 echo -e "${BLUE}Installing important apps... ${NoColor}"
 sleep 3
-sudo apt-get install snapd vlc tmux neofetch git zsh tree| grep "000000"
+sudo apt-get install snapd vlc tmux neofetch git zsh tree
 sleep 2
 clear
 
